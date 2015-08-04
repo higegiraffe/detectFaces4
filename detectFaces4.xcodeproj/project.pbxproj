@@ -14,6 +14,7 @@
 		9D63EF1D1B693D1800BDEEF1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D63EF1B1B693D1800BDEEF1 /* LaunchScreen.xib */; };
 		9D63EF291B693D1800BDEEF1 /* detectFaces4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63EF281B693D1800BDEEF1 /* detectFaces4Tests.swift */; };
 		9D63EF331B693DE200BDEEF1 /* CameraUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63EF321B693DE200BDEEF1 /* CameraUtil.swift */; };
+		9D63EF351B6DECE700BDEEF1 /* detectFaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63EF341B6DECE700BDEEF1 /* detectFaces.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		9D63EF271B693D1800BDEEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D63EF281B693D1800BDEEF1 /* detectFaces4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detectFaces4Tests.swift; sourceTree = "<group>"; };
 		9D63EF321B693DE200BDEEF1 /* CameraUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraUtil.swift; sourceTree = "<group>"; };
+		9D63EF341B6DECE700BDEEF1 /* detectFaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detectFaces.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				9D63EF121B693D1800BDEEF1 /* AppDelegate.swift */,
 				9D63EF141B693D1800BDEEF1 /* ViewController.swift */,
+				9D63EF341B6DECE700BDEEF1 /* detectFaces.swift */,
 				9D63EF321B693DE200BDEEF1 /* CameraUtil.swift */,
 				9D63EF161B693D1800BDEEF1 /* Main.storyboard */,
 				9D63EF191B693D1800BDEEF1 /* Images.xcassets */,
@@ -218,6 +221,7 @@
 				9D63EF331B693DE200BDEEF1 /* CameraUtil.swift in Sources */,
 				9D63EF151B693D1800BDEEF1 /* ViewController.swift in Sources */,
 				9D63EF131B693D1800BDEEF1 /* AppDelegate.swift in Sources */,
+				9D63EF351B6DECE700BDEEF1 /* detectFaces.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +419,7 @@
 				9D63EF2E1B693D1800BDEEF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D63EF2F1B693D1800BDEEF1 /* Build configuration list for PBXNativeTarget "detectFaces4Tests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				9D63EF311B693D1800BDEEF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

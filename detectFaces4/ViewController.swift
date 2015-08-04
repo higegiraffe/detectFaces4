@@ -9,12 +9,10 @@
 import UIKit
 import AVFoundation
 
-// UIView
-//var imageView : UIImageView!
+//var imageView: UIImageView!
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
-//    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     
     // セッション
@@ -134,8 +132,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     // 毎フレーム実行される処理
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
-var q_global: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
+        var q_global: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         var q_main: dispatch_queue_t  = dispatch_get_main_queue()
+        
         dispatch_async(q_global, {
             dispatch_async(q_main, {
             
@@ -144,6 +144,34 @@ var q_global: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORI
             
                 return
            })
+
+            // UIImageへ変換
+//            let image = CameraUtil.imageFromSampleBuffer(sampleBuffer)
+            
+            // 顔認識
+            let detectFace = detectFaces.recognizeFace(self.imageView.image!)
+            
+            
+            dispatch_async(q_main, {
+                
+                // 検出された顔のデータをCIFaceFeatureで処理.
+                var feature : CIFaceFeature = CIFaceFeature()
+                for feature in detectFace.faces {
+                    
+                    // 座標変換.
+                    let faceRect : CGRect = CGRectApplyAffineTransform(feature.bounds, detectFace.transform)
+                    
+                    // 画像の顔の周りを線で囲うUIViewを生成.
+                    var faceOutline = UIView(frame: faceRect)
+                    faceOutline.layer.borderWidth = 1
+                    faceOutline.layer.borderColor = UIColor.redColor().CGColor
+                    self.imageView.addSubview(faceOutline)
+                }
+                
+                return
+            })
+            
+            
         })
     }
         
